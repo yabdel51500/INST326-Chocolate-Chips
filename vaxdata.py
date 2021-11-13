@@ -10,7 +10,7 @@ def main(infile):
     """
     The main function reads the csv file and acsesses the information from October 25th of this year.
     Pandas is used to vizualise the data. Of cource when we need to actually use the data we will not
-    only use the head.
+    only use the first 5 rows, this was just for vizualization purposes. 
     
     Args:
         infile (str) : the name of the csv file of the covid data.
