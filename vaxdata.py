@@ -23,4 +23,28 @@ def main(infile):
     df3.reset_index(drop = True, inplace = True)
     print(df3.head())
 
-main("covid.csv")
+# main("covid.csv")
+
+
+def csv_list(dataset):
+    """The csv_list function would be able to convert the file into a dictionary
+    and return back the columns, location and total_cases
+    Attributes:
+        covid_case(dictionary): contains the values of the data we're looking for
+    """
+
+    covid_case = []
+    with open(dataset, "r", encoding = "utf-8") as f:
+        for line in f:
+            line = line.split(",")
+            covid_case.append({line[2]:line[4]})
+            
+        for i in range(len(covid_case)):
+           a = covid_case[i]
+           print(covid_case)
+           break
+           
+        
+csv_list("covid.csv")
+
+    
