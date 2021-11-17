@@ -49,8 +49,8 @@ csv_list("covid.csv")
 
 from pyecharts.charts import Map,Geo
 def map(list1):
-    map1=Map(init_opts=opts.InitOpts(width=”1000px”, height=”460px”))
-    map1.add(“Total Covid Cases”, list1, maptype=’world’)
+    map1=Map(init_opts=opts.InitOpts(width="1000px", height="460px"))
+    map1.add("Total Covid Cases", list1, maptype=’world’)
 #This function will create a map using covid cases data
 #List1 is a list that contains a list of global covid cases 
     map_1.render_notebook()
