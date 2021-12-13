@@ -100,6 +100,7 @@ def main(infile):
     var1 = a1.map()
     if var1 != None:
         print(var1)
+    return var1
        
     
 def parse_args(arglist):
