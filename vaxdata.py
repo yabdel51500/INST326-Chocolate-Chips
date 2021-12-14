@@ -49,33 +49,34 @@ class Govax:
         Args:
             self (keyword) : binds the attributes with the given arguments.        
         """
-        df1 = pd.read_csv(self.infile)
+        df1 = pd.read_csv('covid.csv')
         df1['date'] = pd.to_datetime(df1['date'])
         df2 = df1.sort_values(by = ['date'], ascending = False)
         df3 = df2[df2['date'] == '2021-10-25']
         df3.reset_index(drop = True, inplace = True)
+        df4 = df2[df2['date'] <= '2021-11-05']
+        df4.reset_index(drop = True, inplace = True)
 
         country = list(df3['location'])
-        totalvax=list(df3['people_fully_vaccinated_per_hundred'])
+        totalvax=list(df3['new_vaccinations_smoothed_per_million'])
 
         list1 = [[country[i],totalvax[i]] for i in range(len(country))] 
-
-        map1 = Map(init_opts=opts.InitOpts(width='1000px', height='460px')) #create the map and set the size of the map
-        map1.add('Total Confirmed Cases', list1, maptype='world')
+        map1 = Map(init_opts=opts.InitOpts(width='1000px', height='460px'))
+        map1.add('Total Confirmed Vaccinations', list1, maptype='world')
         map1.set_series_opts(label_opts=opts.LabelOpts(is_show = False)) 
 
         map1.set_global_opts(visualmap_opts=opts.VisualMapOpts(max_=100 , is_piecewise = True, pieces=[
-        {'min': 100},
-        {'min': 80, 'max': 99.99},
-        {'min': 50, 'max': 79.99},
-        {'min': 30, 'max': 49.99},
-        {'min': .0001, 'max': 29.99},
+        {'min': 9000, 'max': 9999},
+        {'min': 7000, 'max': 8999},
+        {'min': 5000, 'max': 6999},
+        {'min': 3000, 'max': 4999},
+        {'min': 1, 'max': 2999},
         {'max': 0},]),
-        title_opts=opts.TitleOpts(title= "Covid-19 Worldwide Total Vaccinations INST326 Final", subtitle= 'Till October 20th, 2021', pos_left= 'center', padding=0, item_gap=2,
+        title_opts=opts.TitleOpts(title= "Covid-19 Worldwide Total Vaccinations INST326 Final", subtitle= 'Till November 5th, 2021', pos_left= 'center', padding=0, item_gap=2,
         title_textstyle_opts= opts.TextStyleOpts(color='blue', font_weight= 'bold', font_family= 'Courier New', font_size=30), 
         subtitle_textstyle_opts= opts.TextStyleOpts(color='black', font_weight='bold', font_family='Courier New', font_size=20)), 
         legend_opts=opts.LegendOpts(is_show=False))
-        return map1.render_notebook()
+        map1.render()
 
     def secure(self):
         """
@@ -97,10 +98,7 @@ def main(infile):
         self (keyword) : binds the attributes with the given arguments.        
     """
     a1 = Govax("covid.csv")
-    var1 = a1.map()
-    if var1 != None:
-        print(var1)
-    return var1
+    a1.map()
        
     
 def parse_args(arglist):
