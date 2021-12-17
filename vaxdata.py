@@ -1,11 +1,17 @@
-
+"""
+Sources:
+https://www.youtube.com/watch?v=vLEA8dCfusQ 
+https://www.youtube.com/watch?v=BYAwEYwWHyQ 
+https://towardsdatascience.com/how-to-make-a-coronavirus-world-map-in-python-734c9fd87195 <<<<<<< HEAD 
+https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
+https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
+"""
 import pandas as pd
 from pyecharts.charts import Map,Geo
 from pyecharts import options as opts
 from pyecharts.globals import ThemeType
 from argparse import ArgumentParser
 import sys
-from PIL import Image
 
 class Govax:
     """
@@ -76,7 +82,7 @@ class Govax:
         title_textstyle_opts= opts.TextStyleOpts(color='blue', font_weight= 'bold', font_family= 'Courier New', font_size=30), 
         subtitle_textstyle_opts= opts.TextStyleOpts(color='black', font_weight='bold', font_family='Courier New', font_size=20)), 
         legend_opts=opts.LegendOpts(is_show=False))
-        map1.render()
+        return map1.render_notebook()
 
     def secure(self):
         """
@@ -99,6 +105,7 @@ def main(infile):
     """
     a1 = Govax("covid.csv")
     a1.map()
+    print(a1.map())
        
     
 def parse_args(arglist):
