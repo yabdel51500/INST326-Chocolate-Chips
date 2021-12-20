@@ -123,7 +123,6 @@ def main(infile):
     a1.map()
     print(a1.map())
     url = "render.html"
-    url1 = "World map.html"
     covid_map = webbrowser.open(url, new = 2)
     print(covid_map)
     
