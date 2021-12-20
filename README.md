@@ -21,3 +21,4 @@ https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
 =======
 https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
 >>>>>>> be87329ef8884f86f30101292aa19d1c2b2e9f80
+https://stackoverflow.com/questions/31715119/how-can-i-open-a-website-in-my-web-browser-using-python
