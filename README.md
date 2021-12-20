@@ -15,10 +15,14 @@ Sources:
 
 https://www.youtube.com/watch?v=vLEA8dCfusQ
 https://www.youtube.com/watch?v=BYAwEYwWHyQ
-https://towardsdatascience.com/how-to-make-a-coronavirus-world-map-in-python-734c9fd87195
+https://towardsdatascience.com/how-to-make-a-coronavirus
+-world-map-in-python-734c9fd87195
 <<<<<<< HEAD
 https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
 =======
 https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
 >>>>>>> be87329ef8884f86f30101292aa19d1c2b2e9f80
-https://stackoverflow.com/questions/31715119/how-can-i-open-a-website-in-my-web-browser-using-python
+https://stackoverflow.com/questions/31715119/how-can-i-open-a
+-website-in-my-web-browser-using-python
+https://stackoverflow.com/questions/40905703/how-to-open-an-html
+-file-in-the-browser-from-python
