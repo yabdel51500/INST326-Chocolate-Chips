@@ -15,7 +15,8 @@ from pyecharts import options as opts
 from pyecharts.globals import ThemeType
 from argparse import ArgumentParser
 import sys
-import webbrowser 
+import webbrowser
+import os
 
 class Govax:
     """
@@ -122,12 +123,12 @@ def main(infile):
     a1 = Govax("covid.csv")
     a1.map()
     print(a1.map())
-    url = "render.html"
-    covid_map = webbrowser.open(url, new = 2)
-    print(covid_map)
     
-       
-    
+    print('Please use jupyter notebook to view the map printed in terminal' + 
+          ' or open render.html directly'
+          )
+    webbrowser.open('file://'+os.path.realpath('render.html'))
+     
 def parse_args(arglist):
     """ Parse command-line arguments.
     
