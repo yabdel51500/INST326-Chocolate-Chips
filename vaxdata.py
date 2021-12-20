@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
 https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
 https://stackoverflow.com/questions/31715119/how-can
 -i-open-a-website-in-my-web-browser-using-python
+https://stackoverflow.com/questions/40905703/how-to-
+open-an-html-file-in-the-browser-from-python
 """
 import pandas as pd
 from pyecharts.charts import Map,Geo
@@ -112,13 +114,21 @@ def main(infile):
     i-open-a-website-in-my-web-browser-using-python, it will open the printed 
     map in a new browser and would return back True in the terminal.
     
+    This function will also use the os module from https://stackoverflow.com
+    /questions/40905703/how-to-open-an-html-file-in-the-browser-from-python
+    to help print out the covid map from the correct path.
+    
+    
     Args:
         self (keyword) : binds the attributes with the given arguments.  
     
     Attributes:
-        url (str) : string that contains the html of the covid data
-        covid_map (image) : the created image of the map containing 
-        covid results from countries all around the world.
+        file (str) : string that contains the html of the covid data
+       
+    Returns:
+        (image) : the created image of the map containing 
+        covid results from countries all around the world in a new web
+        browser.
     """
     a1 = Govax("covid.csv")
     a1.map()
