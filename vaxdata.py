@@ -1,10 +1,13 @@
 """
-Sources:
+These are the sources we incorporated into our code:
 https://www.youtube.com/watch?v=vLEA8dCfusQ 
 https://www.youtube.com/watch?v=BYAwEYwWHyQ 
-https://towardsdatascience.com/how-to-make-a-coronavirus-world-map-in-python-734c9fd87195 <<<<<<< HEAD 
+https://towardsdatascience.com/how-to-make-a-coronavirus
+-world-map-in-python-734c9fd87195 <<<<<<< HEAD 
 https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
 https://www.youtube.com/watch?v=GyMO9WCEheQ&t=24s
+https://stackoverflow.com/questions/31715119/how-can
+-i-open-a-website-in-my-web-browser-using-python
 """
 import pandas as pd
 from pyecharts.charts import Map,Geo
@@ -12,10 +15,12 @@ from pyecharts import options as opts
 from pyecharts.globals import ThemeType
 from argparse import ArgumentParser
 import sys
+import webbrowser 
 
 class Govax:
     """
-    This class reads a csv file and converts said information to a list that is then converted ti a map.
+    This class reads a csv file and converts said information 
+    to a list that is then converted to a map.
     
     Attributes:
         infile : csv containing covid information
@@ -48,8 +53,10 @@ class Govax:
         
     def map(self):
         """
-        The main function reads the csv file and acsesses the information from October 25th of this year.
-        Pandas is used to vizualise the data. Of cource when we need to actually use the data we will not
+        The main function reads the csv file and acsesses the 
+        information from October 25th of this year.
+        Pandas is used to vizualise the data. Of cource when we 
+        need to actually use the data we will not
         only use the first 5 rows, this was just for vizualization purposes. 
         
         Args:
@@ -98,14 +105,28 @@ class Govax:
         
 def main(infile):
     """
-    This function creates an instance of the Govax() class.
+    This function creates an instance of the Govax() class. This function also
+    prints out a map of the covid data into a new browser. By using the 
+    webbrowser module from https://stackoverflow.com/questions/31715119/how-can-
+    i-open-a-website-in-my-web-browser-using-python, it will open the printed 
+    map in a new browser and would return back True in the terminal.
     
     Args:
-        self (keyword) : binds the attributes with the given arguments.        
+        self (keyword) : binds the attributes with the given arguments.  
+    
+    Attributes:
+        url (str) : string that contains the html of the covid data
+        covid_map (image) : the created image of the map containing 
+        covid results from countries all around the world.
     """
     a1 = Govax("covid.csv")
     a1.map()
     print(a1.map())
+    url = "render.html"
+    url1 = "World map.html"
+    covid_map = webbrowser.open(url, new = 2)
+    print(covid_map)
+    
        
     
 def parse_args(arglist):
