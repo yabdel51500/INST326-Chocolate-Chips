@@ -30,7 +30,7 @@ class Govax:
     """
     def __init__(self, infile):
         self.infile = infile
-        
+     
     def read(self, infile):
         """
         Reads the csv and organizes into a list.
@@ -105,7 +105,7 @@ class Govax:
             raise ValueError("The file inserted must be in a csv format")
         if self.map() is None:
             raise ValueError("File corrupted or incorrect format before delivery")
-        
+   
 def main(infile):
     """
     This function creates an instance of the Govax() class. This function also
@@ -143,13 +143,7 @@ def parse_args(arglist):
     """ Parse command-line arguments.
     
     Expect three mandatory arguments:
-        - filename: a path to a CSV file containing aardvark stats
-        - aardvark_1: the name of the first aardvark in the battle
-        - aardvark_2: the name of the second aardvark in the battle
-
-    Also allow one optional argument, which should be preceded by -p or --pause:
-        - pause: the number of seconds to pause after each attack in the battle
-          (defaults to 2.0)
+        - infile: a path to a CSV file containing covid data
         
     Args:
         arglist (list of str): arguments from the command line.
