@@ -28,9 +28,11 @@ class Govax:
     Attributes:
         infile : csv containing covid information
     """
+    #Ishika
     def __init__(self, infile):
         self.infile = infile
      
+    #Christine
     def read(self, infile):
         """
         Reads the csv and organizes into a list.
@@ -53,7 +55,7 @@ class Govax:
             list1.append(x, iso, continent, country, date)
             reader = f.readline()
         f.close()
-        
+    #Yahya 
     def map(self):
         """
         The main function reads the csv file and acsesses the 
@@ -93,7 +95,7 @@ class Govax:
         subtitle_textstyle_opts= opts.TextStyleOpts(color='black', font_weight='bold', font_family='Courier New', font_size=20)), 
         legend_opts=opts.LegendOpts(is_show=False))
         return map1.render_notebook()
-
+    #Yahya
     def secure(self):
         """
             This function ensures that the csv file works with the code.
@@ -106,6 +108,7 @@ class Govax:
         if self.map() is None:
             raise ValueError("File corrupted or incorrect format before delivery")
    
+#Christine      
 def main(infile):
     """
     This function creates an instance of the Govax() class. This function also
@@ -138,12 +141,12 @@ def main(infile):
           ' or open render.html directly'
           )
     webbrowser.open('file://'+os.path.realpath('render.html'))
-     
+#Ishika
 def parse_args(arglist):
     """ Parse command-line arguments.
     
-    Expect three mandatory arguments:
-        - infile: a path to a CSV file containing covid data
+    Expect one mandatory arguments:
+        - filename: a path to a CSV file containing covid data.
         
     Args:
         arglist (list of str): arguments from the command line.
@@ -152,8 +155,7 @@ def parse_args(arglist):
         namespace: the parsed arguments, as a namespace.
     """
     parser = ArgumentParser()
-    parser.add_argument("infile",
-                        help="path to CSV file containing aardvark stats")
+    parser.add_argument("infile", help="path to CSV file containing covid data.")
     return parser.parse_args(arglist)
 
 
